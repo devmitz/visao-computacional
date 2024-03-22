@@ -1,6 +1,6 @@
 import numpy as np
 import cv2
-img = cv2.imread('aula02/dados.jpg')
+img = cv2.imread('dados.jpg')
 (canalAzul, canalVerde, canalVermelho) = cv2.split(img)
 zeros = np.zeros(img.shape[:2], dtype = "uint8")
 cv2.imshow("Vermelho", cv2.merge([zeros, zeros, 
