@@ -28,7 +28,7 @@ while True:
     frame_pb = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     #detecta as faces no frame
     faces = df.detectMultiScale(frame_pb, scaleFactor = 1.1,
-    minNeighbors=3, minSize=(20,20), flags=cv2.CASCADE_SCALE_IMAGE)
+                                minNeighbors=3, minSize=(20,20), flags=cv2.CASCADE_SCALE_IMAGE)
     frame_temp = frame.copy()
     for (x, y, lar, alt) in faces:
         cv2.rectangle(frame_temp, (x, y), (x + lar, y + alt), (0,
