@@ -26,8 +26,8 @@ bin = cv2.bitwise_not(bin)
 bordas = cv2.Canny(bin, 70, 150)
 # Passo 5: Identificação e contagem dos contornos da imagem
 # cv2.RETR_EXTERNAL = conta apenas os contornos externos
-(lx, objetos, lx) = cv2.findContours(bordas.copy(),
-                                     cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+objetos, _ = cv2.findContours(bordas.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+
 # A variável lx (lixo) recebe dados que não são utilizados
 escreve(img, "Imagem em tons de cinza", 0)
 escreve(suave, "Suavizacao com Blur", 0)
