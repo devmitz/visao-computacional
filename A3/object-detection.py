@@ -7,7 +7,7 @@ def escreve(img, texto, cor=(255, 0, 0)):
     fonte = cv2.FONT_HERSHEY_SIMPLEX
     cv2.putText(img, texto, (10, 20), fonte, 0.5, cor, 0, cv2.LINE_AA)
 
-imgColorida = cv2.imread('p.jpg')  # Carregamento da imagem
+imgColorida = cv2.imread('pen.jpg')  # Carregamento da imagem
 imgColorida = imgColorida[::2, ::2]
 
 # Se necessário, o redimensionamento da imagem pode vir aqui.
@@ -38,7 +38,7 @@ bordas = cv2.Canny(bin, 70, 150)
 objetos, _ = cv2.findContours(bordas.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
 # Filtragem de contornos por área
-min_area = 500  # Define o mínimo de área para um objeto ser considerado
+min_area = 10  # Define o mínimo de área para um objeto ser considerado
 objetos_filtrados = [cnt for cnt in objetos if cv2.contourArea(cnt) > min_area]
 
 # A variável _ (lixo) recebe dados que não são utilizados
